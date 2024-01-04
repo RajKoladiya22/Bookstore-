@@ -1,0 +1,33 @@
+<center>
+    <h1>View User</h1>
+    <table border="1">
+        <thead>
+            <th>Srno</th>
+            <th>Book Name</th>
+            <th>Book Price</th>
+            <th>Pages</th>
+            <th>Book Author</th>
+            <th>Image</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <% record.map((val,i)=>{i=i+1 %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= val.name %></td>
+                    <td><%= val.price %></td>
+                    <td><%= val.page %></td>
+                    <td><%= val.author %></td>
+                    <td>
+                        <img src="<%= val.image %>" width="100"/>
+                    </td>
+                    <td>
+                        <a href="/deleteRecord?id=<%= val.id %>">Delete</a> ||
+                        <a href="/editRecord?id=<%= val.id %>">Edit</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/add">Add</a>
+</center>
